@@ -11,10 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseInMemoryDatabase("AppDb"));
+    options.UseInMemoryDatabase("AppDb")).AddControllers();
 
 var app = builder.Build();
-//CreateHostBuilder(args).Build().Run();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -30,14 +29,3 @@ app.MapControllers();
 
 app.Run();
 
-//static IHostBuilder CreateHostBuilder(string[] args) =>
-//Host.CreateDefaultBuilder(args)
-//                .ConfigureWebHostDefaults(webBuilder =>
-//                {
-//                    webBuilder.UseStartup<Startup>();
-//                })
-//                .ConfigureServices((hostContext, services) =>
-//                {
-//                    services.AddDbContext<AppDbContext>(options =>
-//                        options.UseInMemoryDatabase("AppDb"));
-//                });
