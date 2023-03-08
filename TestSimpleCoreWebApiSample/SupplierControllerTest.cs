@@ -42,6 +42,7 @@ namespace TestSimpleCoreWebApiSample
 
             // Assert
             Assert.AreEqual(2, suppliers.Count);
+
         }
 
         private void SeedData()
